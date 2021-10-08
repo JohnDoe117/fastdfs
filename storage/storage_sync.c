@@ -2909,6 +2909,11 @@ static void* storage_sync_thread_entrance(void* arg)
 	time_t end_time;
 	time_t last_keep_alive_time;
 	
+	logInfo("file: "__FILE__", line: %d, " \
+		"######## storage_sync_thread_entrance start", \
+		__LINE__);
+ 
+
 	pStorage = (FDFSStorageBrief *)arg;
 	strcpy(storage_server.ip_addr, pStorage->ip_addr);
 	storage_server.port = g_server_port;

@@ -41,6 +41,11 @@ void storage_sync_connect_storage_server_ex(const FDFSStorageBrief *pStorage,
     FDFSMultiIP *multi_ip;
 
     multi_ip = NULL;
+
+    logInfo("file: "__FILE__", line: %d, " \
+		"######## storage_sync_connect_storage_server_ex start", \
+		__LINE__);
+
     if (g_use_storage_id)
     {
         FDFSStorageIdInfo *idInfo;

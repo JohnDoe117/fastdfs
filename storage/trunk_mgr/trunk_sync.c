@@ -2060,6 +2060,10 @@ static void *trunk_sync_thread_entrance(void* arg)
 	int result;
 	time_t current_time;
 	time_t last_keep_alive_time;
+
+	logInfo("file: "__FILE__", line: %d, " \
+		"######## trunk_sync_thread_entrance start", \
+		__LINE__);
 	
 	memset(local_ip_addr, 0, sizeof(local_ip_addr));
 	memset(&reader, 0, sizeof(reader));
@@ -2075,7 +2079,7 @@ static void *trunk_sync_thread_entrance(void* arg)
 	storage_server.port = g_server_port;
 	storage_server.sock = -1;
 
-	logInfo("file: "__FILE__", line: %d, " \
+	logWarning("file: "__FILE__", line: %d, " \
 		"trunk sync thread to storage server %s:%d started", \
 		__LINE__, storage_server.ip_addr, storage_server.port);
 
